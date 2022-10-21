@@ -1,0 +1,49 @@
+bl = not False and True or False and not True
+
+# result = True and True or False and False (Упрощаем оператор not)
+# result = True or False (Упрощаем оператор and)
+# result = True (Упрощаем оператор or)
+
+
+
+list_numbers = [2, -93, -2, 8, -36, -44, -1, -85, -14, 90, -22, -90, -100, -8, 38, -92, -45, 67, 53, 25]
+max_number, max_index = max(list_numbers), list_numbers.index(max(list_numbers))
+list_numbers[max_index] = list_numbers[-1]
+list_numbers[-1] = max_number
+print(list_numbers)
+
+
+money_capital = 10000
+salary = 5000
+spend = 6000
+increase = 5
+def f(money_capital, salary, spend, increase):
+    score = 0
+    while money_capital >= spend:
+        money_capital -= spend
+        money_capital += salary
+        spend += (spend*increase)/100
+        score += 1
+    return score
+
+
+
+x = f(money_capital, salary, spend, increase)
+print(x)
+
+
+salary = 5000
+spend = 6000
+increase = 3
+
+def ff(salary, spend, increase):
+    salary = salary * 10
+    sum_spend = spend
+    for i in range(10):
+        spend += ((spend*increase)/100)
+        sum_spend += spend
+    money_capital = sum_spend-salary
+    return int(money_capital)
+
+
+
